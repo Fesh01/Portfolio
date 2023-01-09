@@ -1,0 +1,422 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home {
+  height: 100%;
+  padding-top: 40vh;
+  background: linear-gradient(to right, rgba(27, 27, 27, 0.9), rgba(27, 27, 27, 0.4)), url(/Sass/images/Fesh.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+.home-name {
+  font-size: 4rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #fff;
+}
+.home-name_last {
+  color: rgb(204, 29, 29);
+  font-size: 3rem;
+}
+
+/*..... in after and before pseudo classes. ....*/
+.burger-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  height: 30px;
+  width: 30px;
+  transition: all 0.4s ease-in;
+}
+.burger-menu_item {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  height: 4px;
+  width: 28px;
+  background: #fff;
+  transition: all 0.4s ease-in;
+}
+.burger-menu_item::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  height: 4px;
+  width: 28px;
+  background: #fff;
+  transition: all 0.4s ease-in;
+}
+.burger-menu_item::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  height: 4px;
+  width: 28px;
+  background: #fff;
+  transition: all 0.4s ease-in;
+}
+.burger-menu_item.open {
+  transform: rotate(720deg);
+  background: transparent;
+}
+.burger-menu_item.open::before {
+  transform: rotate(45deg) translate(5px, 8px);
+}
+.burger-menu_item.open::after {
+  transform: rotate(-45deg) translate(3px, -7px);
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  opacity: 0.9;
+  visibility: hidden;
+}
+.menu.open {
+  visibility: visible;
+}
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  height: 100vh;
+  width: 100vw;
+  list-style: none;
+  overflow: hidden;
+  background: rgb(27, 27, 27);
+  transform: translateY(-100%);
+  transition: all 0.4s ease-in;
+}
+.menu-items.open {
+  transform: translateY(0);
+}
+.menu-items_name {
+  transform: translateX(100vw);
+  transition: all 0.4s ease-in;
+}
+.menu-items_name.open {
+  transform: translateX(0);
+}
+.menu-items_name.active > a {
+  color: rgb(204, 29, 29);
+}
+.menu-items_link {
+  display: inline-block;
+  padding: 1rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  transition: all 0.4s ease-in;
+}
+.menu-items_link:hover {
+  color: rgb(204, 29, 29);
+}
+
+.menu-items_name:nth-child(1) {
+  transition-delay: 0.7s;
+}
+
+.menu-items_name:nth-child(2) {
+  transition-delay: 1.2s;
+}
+
+.menu-items_name:nth-child(3) {
+  transition-delay: 1.7s;
+}
+
+.menu-items_name:nth-child(4) {
+  transition-delay: 2.2s;
+}
+
+.about {
+  padding-bottom: 2rem;
+}
+.about_bio-image {
+  height: 50vh;
+  width: 100%;
+  background: linear-gradient(to right, rgba(27, 27, 27, 0.9), rgba(27, 27, 27, 0.4)), url(/Sass/images/Fesh.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.about_info {
+  width: 80%;
+  text-align: center;
+}
+.about_info h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+.about_info p {
+  margin-top: 1rem;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.about .jobs {
+  width: 60vw;
+  margin: 2rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+}
+.about .jobs_job {
+  background: #2f2f2f;
+  padding: 1rem;
+  border-bottom: 5px solid rgb(204, 29, 29);
+  text-align: left;
+}
+.about .jobs_job-ob {
+  background: #2f2f2f;
+  padding: 1rem;
+  border-bottom: 5px solid rgb(204, 29, 29);
+  text-align: center;
+}
+.about .jobs_job-ob-jobb {
+  background: #2f2f2f;
+  padding: 1rem;
+  border-bottom: 5px solid rgb(204, 29, 29);
+  text-align: right;
+}
+.about .jobs_job-ob-jobb h2, .about .jobs_job-ob-jobb h3, .about .jobs_job-ob-jobb h4 {
+  margin-bottom: 0.3rem;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  transform: rotate(90deg) translate(-3rem, 5rem);
+}
+
+.project {
+  padding-bottom: 2rem;
+}
+.project_bio-image {
+  height: 30vh;
+  width: 100%;
+  background: linear-gradient(to right, rgba(27, 27, 27, 0.9), rgba(27, 27, 27, 0.4)), url(/Sass/images/Fesh.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.project h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.project_items {
+  width: 60vw;
+  margin: 2rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+}
+.project_item {
+  position: relative;
+  padding: 1rem;
+  cursor: pointer;
+  overflow: hidden;
+  border-bottom: 5px solid rgb(204, 29, 29);
+}
+.project_item img {
+  width: 100%;
+}
+.project_item::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(204, 29, 29);
+  opacity: 0;
+  z-index: 1;
+  transition: all 0.4s ease-in;
+}
+.project_item:hover::after {
+  top: 0;
+  opacity: 0.5;
+}
+.project_item:hover .project-btn {
+  opacity: 1;
+}
+.project_item h2, .project_item h3, .project_item h4 {
+  margin-bottom: 0.3rem;
+}
+.project_btns {
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  left: 10%;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  z-index: 2;
+}
+.project-btn {
+  opacity: 0;
+  color: #000;
+}
+.project-btn:hover {
+  color: #fff;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  transform: rotate(90deg) translate(-3rem, 5rem);
+}
+
+.contact {
+  height: 100%;
+  padding-top: 40vh;
+  background: linear-gradient(to right, rgba(27, 27, 27, 0.9), rgba(27, 27, 27, 0.4)), url(/Sass/images/Fesh.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact h2 {
+  font-size: 2.1rem;
+  margin-bottom: 2rem;
+}
+.contact_lists {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+  font-size: 1.5rem;
+}
+
+@media screen and (min-width: 786px) {
+  .burger-menu {
+    visibility: hidden;
+  }
+  .menu {
+    visibility: visible;
+  }
+  .menu .menu-items {
+    display: block;
+    background: transparent;
+    transform: translateY(0);
+    height: 100%;
+    text-align: right;
+  }
+  .menu .menu-items_name {
+    display: inline;
+    padding-right: 1.5rem;
+  }
+  .menu .menu-items_link {
+    font-size: 1.5rem;
+  }
+  .about {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+  }
+  .project .project_bio-image {
+    height: 40vh;
+  }
+  .project_items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact_lists {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .project_items {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .contact_lists {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1600px) {
+  .project .project_bio-image {
+    height: 50vh;
+  }
+}
+body {
+  background: rgb(27, 27, 27);
+  height: 100vh;
+  color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  padding: 1rem;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+main .social-links {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+}
+main .social-links a {
+  padding: 0.4rem;
+  transition: all 0.4s ease-in;
+}
+main .social-links a:hover {
+  color: rgb(204, 29, 29);
+}
+
+.text-secondary {
+  color: rgb(204, 29, 29);
+}
+
+footer {
+  position: fixed;
+  bottom: 0.2rem;
+  right: 1rem;
+  color: #fff;
+  padding: 1rem;
+  text-align: right;
+  font-size: 1.3rem;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,40 @@
+$primary_color: rgb(27, 27, 27);
+$secondary_color: rgb(204, 29, 29);
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin transition-ease{
+    transition: all 0.4s ease-in;
+
+}
+
+@function text-color($color){
+    @if (lightness($color) > 40%){
+        @return #000;
+    }@else {
+        @return #fff;
+    }
+}
+
+@mixin media-md {
+    @media screen and (min-width:786px) {
+     @content;
+    }
+ }
+ 
+ @mixin media-lg {
+     @media screen and(min-width: 1024px) {
+         @content;
+     }
+ }
+ 
+ @mixin media-xl {
+     @media screen and(min-width: 1600px) {
+         @content;
+     }
+ }

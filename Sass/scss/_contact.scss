@@ -1,0 +1,25 @@
+.contact{
+    height: 100%;
+    padding-top: 40vh;
+    background: linear-gradient(to right, rgba($primary-color,0.9), rgba($primary-color,0.4)),
+    url(/Sass/images/Fesh.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    h2{
+        font-size: 2.1rem;
+        margin-bottom: 2rem;
+    }
+
+    &_lists{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+        font-size: 1.5rem;
+    }
+}

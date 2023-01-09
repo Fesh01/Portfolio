@@ -1,0 +1,72 @@
+@import './config';
+@import './home';
+@import './menu';
+@import './about';
+@import './project';
+@import './contact';
+@import './responsive';
+
+
+body{
+    background: $primary_color;
+    height: 100vh;
+    color: #fff;
+}
+
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 400;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: text-color($primary_color);
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    padding: 1rem;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+
+
+    .social-links{
+        position: fixed;
+        bottom: 1rem;
+        left: 1rem;
+
+
+
+
+        a{
+            padding: 0.4rem;
+            @include transition-ease;
+
+            &:hover{
+                color: $secondary_color;
+            }
+        }
+        
+
+    }
+}
+
+.text-secondary{
+    color: $secondary_color;
+}
+footer{
+    position: fixed;
+    bottom: 0.2rem;
+    right: 1rem;
+    color: text-color($primary_color);
+    padding: 1rem;
+    text-align: right;
+    font-size: 1.3rem;
+
+}

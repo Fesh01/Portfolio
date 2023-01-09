@@ -1,0 +1,24 @@
+.home{
+    height: 100%;
+    padding-top: 40vh;
+    background: linear-gradient(to right, rgba($primary-color,0.9), rgba($primary-color,0.4)),
+    url(/Sass/images/Fesh.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+
+    &-name{
+        font-size: 4rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid text-color($primary_color);
+
+        &_last{
+            color: $secondary_color;
+            font-size: 3rem;
+        }
+    }
+}

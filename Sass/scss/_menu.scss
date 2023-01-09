@@ -1,0 +1,112 @@
+
+
+/*..... in after and before pseudo classes. ....*/
+.burger-menu{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    height: 30px;
+    width: 30px;
+    @include transition-ease;
+
+    &_item{
+        position: absolute;
+        top: 15px;
+        right: 10px;
+        height: 4px;
+        width: 28px;
+        background: text-color($primary_color);
+         @include transition-ease;
+
+         &::before{
+            content: "";
+            position: absolute;
+            top: -8px;
+            height: 4px;
+            width: 28px;
+            background: text-color($primary_color);
+            @include transition-ease;
+         }
+         &::after{
+            content: "";
+            position: absolute;
+            top: 8px;
+            height: 4px;
+            width: 28px;
+            background: text-color($primary_color);
+            @include transition-ease;
+         }
+
+         &.open{
+            transform: rotate(720deg);
+            background: transparent;
+
+            &::before{
+                transform: rotate(45deg) translate(5px, 8px);
+            }
+            &::after{
+                transform: rotate(-45deg) translate(3px, -7px);
+            }
+         }
+    } 
+}
+
+.menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    opacity: 0.9;
+    visibility: hidden;
+    &.open{
+        visibility: visible;
+    }
+    &-items{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        height: 100vh;
+        width: 100vw;
+        list-style: none;
+        overflow: hidden;
+        background: $primary_color;
+        transform: translateY(-100%);
+        @include transition-ease;
+
+        &.open{
+            transform: translateY(0);
+        }
+        &_name {
+            transform: translateX(100vw);
+            @include transition-ease;
+
+            &.open{
+                transform: translateX(0);
+            }
+            &.active > a{
+                color: $secondary_color;
+            }
+        }
+        &_link{
+            display: inline-block;
+            padding: 1rem;
+            font-size: 1.20rem;
+            text-transform: uppercase;
+            @include transition-ease;
+
+            &:hover{
+                color: $secondary_color;
+            }
+        }
+    }
+}
+
+@for $i from 1 through 4{
+    .menu-items_name:nth-child(#{$i}) {
+        transition-delay: ($i * 0.5s) + 0.2s;
+    }
+}

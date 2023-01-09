@@ -1,0 +1,61 @@
+@include media-md{
+    .burger-menu{
+        visibility: hidden;
+    }
+    .menu{
+        visibility: visible;
+
+        .menu-items{
+            display: block;
+            background: transparent;
+            transform: translateY(0);
+            height: 100%;
+            text-align: right;
+
+            &_name{
+                display: inline;
+                padding-right: 1.5rem;
+            }
+            &_link{
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+
+.about{
+    margin-top: .5rem;
+    font-size: 1.10rem;
+}
+.project{
+    .project_bio-image{
+        height: 40vh;
+
+    }
+    &_items{
+        grid-template-columns: repeat(2, 1fr);
+    }}
+
+.contact_lists{
+    grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@include media-lg{
+    .project{
+        
+        &_items{
+            grid-template-columns: repeat(3, 1fr);
+        }}
+    .contact_lists{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@include media-xl{
+    .project{
+        .project_bio-image{
+            height: 50vh;
+    
+        }
+}}
